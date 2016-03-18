@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\Rizwan Asif\AndroidStudioProjects\ObjectDistance\Application\build\intermediates\exploded-aar\org.opencv\opencv-android\2.4.8\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="a732696d52b8f8fdd1ebd2b6f05ef5fb4b588434">
+        <dex dex="C:\Users\Rizwan Asif\AndroidStudioProjects\ObjectDistance\Application\build\intermediates\pre-dexed\debug\classes-0ab9ac817744c900721ffd29ae1db8960e59c2a3.jar" />
+    </item>
+
+</items>
