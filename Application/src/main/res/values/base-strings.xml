@@ -16,13 +16,16 @@
 -->
 
 <resources>
-    <string name="app_name">Camera2Basic</string>
+    <string name="app_name">Dist2Object</string>
     <string name="intro_message">
         <![CDATA[
         
             
-            This sample demonstrates the basic use of Camera2 API. Check the source code to see how
-            you can display camera preview and take pictures.
+            This sample demonstrates a contour based algorithm for distance detection from camera to object.
+            Take the first picture to calibrate to fix focal length of camera; provide distance
+            to object and perimeter length of the object in the pop-up dialog that follows.
+            The next picture you take will provide distance of that object to the camera.
+            The pictures will be stored in "/storage/emulated/0/Android/data/com.example.android.camera2basic/files/".
             
         
         ]]>

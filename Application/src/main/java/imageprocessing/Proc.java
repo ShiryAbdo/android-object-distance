@@ -1,3 +1,12 @@
+    /*
+    * This class is where all the calculation is done.
+    * The algorithm is inspired from: http://www.pyimagesearch.com/2015/01/19/find-distance-camera-objectmarker-using-python-opencv/
+    *
+    * All my contributions to object distance detection will be indicated by a tag "Riz"
+    * If one likes to study the object distance code just do ctrl+f the write "Riz"
+    *
+    */
+
 package imageprocessing;
 
 import android.os.Environment;

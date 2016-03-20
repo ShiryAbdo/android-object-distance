@@ -14,6 +14,13 @@
  * limitations under the License.
  */
 
+    /*
+    *
+    * All my contributions to object distance detection will be indicated by a tag "Riz"
+    * If one likes to study the object distance code just do ctrl+f the write "Riz"
+    *
+    */
+
 package com.example.android.camera2basic;
 
 import android.Manifest;
@@ -85,7 +92,7 @@ interface ImgSaverCallback{
 public class Camera2BasicFragment extends Fragment
         implements View.OnClickListener, FragmentCompat.OnRequestPermissionsResultCallback, ImgSaverCallback {
 
-    /*Riz: Required Vales*/
+    //Riz: Declarations
     private static final String RIZ_TAG = "RIZ: C2BFragment";
     private static boolean REFERENCE_PICTURE_TAKEN;
     private static double KNOWNFOCALLENGTH;
@@ -887,9 +894,6 @@ public class Camera2BasicFragment extends Fragment
             Log.i(RIZ_TAG, "Distance: " + Double.toString(d));
         }
     }
-
-
-
     /*--------------------------------------------------------*/
 
     /**
@@ -898,9 +902,13 @@ public class Camera2BasicFragment extends Fragment
      */
     private void unlockFocus() {
         try {
+
+            // Riz: This has been commented out because once you have a clear focus while calibrating the camera
+            // it should not be changed while making calculations. Since we need a constant focal length.
             // Reset the auto-focus trigger
-           // mPreviewRequestBuilder.set(CaptureRequest.CONTROL_AF_TRIGGER,
-           //         CameraMetadata.CONTROL_AF_TRIGGER_CANCEL);
+            // mPreviewRequestBuilder.set(CaptureRequest.CONTROL_AF_TRIGGER,
+            //        CameraMetadata.CONTROL_AF_TRIGGER_CANCEL);*/
+
             setAutoFlash(mPreviewRequestBuilder);
             mCaptureSession.capture(mPreviewRequestBuilder.build(), mCaptureCallback,
                     mBackgroundHandler);
@@ -940,6 +948,7 @@ public class Camera2BasicFragment extends Fragment
         }
     }
 
+    //Riz: Callback override
     @Override
     public void onImgSaveComplete(String img_path) {
         Log.i(RIZ_TAG, "Started Distance Finding Process");
@@ -984,7 +993,7 @@ public class Camera2BasicFragment extends Fragment
                     try {
                         output.close();
                         Log.i(RIZ_TAG, "File Created: " + mFile.toString());
-                        c.onImgSaveComplete(mFile.toString());
+                        c.onImgSaveComplete(mFile.toString()); //Riz: Running Callback
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -1080,19 +1089,19 @@ public class Camera2BasicFragment extends Fragment
             layout.setOrientation(LinearLayout.VERTICAL);
             AlertDialog.Builder builder = new AlertDialog.Builder(parent.getContext());
             builder.setTitle("Picture Loaded");
-            builder.setMessage("Enter The Known Distance and Width:");
+            builder.setMessage("Enter the Distance and Perimeter Length of Object, repectively:");
             builder.setIcon(getResources().getDrawable(android.R.drawable.ic_dialog_info));
 
             // Use an EditText view to get user input.
             final EditText dist_et = new EditText(parent.getContext());
             dist_et.setId(0);
-            dist_et.setInputType(InputType.TYPE_CLASS_NUMBER);
+            dist_et.setRawInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
             dist_et.setTextColor(getResources().getColor(android.R.color.background_dark));
             layout.addView(dist_et);
 
             final EditText width_et = new EditText(parent.getContext());
             width_et.setId(0);
-            width_et.setInputType(InputType.TYPE_CLASS_NUMBER);
+            width_et.setRawInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
             width_et.setTextColor(getResources().getColor(android.R.color.background_dark));
             layout.addView(width_et);
 
