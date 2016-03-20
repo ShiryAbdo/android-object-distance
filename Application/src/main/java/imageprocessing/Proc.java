@@ -9,7 +9,6 @@
 
 package imageprocessing;
 
-import android.os.Environment;
 import android.util.Log;
 
 import com.example.android.camera2basic.CameraActivity;
@@ -20,9 +19,6 @@ import org.opencv.imgproc.Imgproc;
 import org.opencv.highgui.Highgui;
 
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.List;
 

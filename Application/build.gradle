@@ -9,6 +9,7 @@ buildscript {
     }
 }
 
+
 apply plugin: 'com.android.application'
 
 repositories {
@@ -41,8 +42,11 @@ android {
     buildToolsVersion "23.0.2"
 
     defaultConfig {
+        applicationId "riz.com.dist2object"
         minSdkVersion 23
         targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
     }
 
     compileOptions {
