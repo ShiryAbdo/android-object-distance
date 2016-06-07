@@ -1,6 +1,14 @@
 # android-object-distance
 Android sample app which provides distance of an object from the camera; using contour based image recognition through OpenCV. This project is avilable on google play store as an example.
 
+- Place an object with a highlighted boundry in front of your phone. 
+- Take a picture and enter its initial ditance and length of its perimeter, all in centimeters. 
+- Now move the phone some distance away and take the picture again. 
+- A distance, from phone to object, will be displayed.
+- Approx. error ~2cm.
+
+Tested on Nexus 5.
+
 # Disclaimer
 I have used code from the following projects and do not own them
 
